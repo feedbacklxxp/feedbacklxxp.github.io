@@ -5,9 +5,9 @@
   <link href="styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-  <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+  <link rel='icon' href='favicon.ico' type='image/x-icon' />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 </head>
 
@@ -32,23 +32,46 @@
 
     </div>
   </header>
+
   <div class="section" id="latest-news">
     <div class="content">
-      <div class="news-content">
-        <div class="latest-news-header">
-          LATEST NEWS
+      <div class="news-slider">
+        <div class="btn prev"><img src="images/left-arrow.png" /></div>
+        <div class="news-content">
+          <div class="latest-news-header">
+            LATEST NEWS
+          </div>
+          <div class="news-items">
+            <div class="news-item">
+              <p>
+                New song released!
+              </p>
+              <p>
+                Scroll down to listen to "Where Are You Now" or click here to listen to it on <a href="https://feedback-loop.bandcamp.com/track/where-are-you-now">Bandcamp</a>.
+              </p>
+              <div class="news-date">
+                2020-10-07
+              </div>
+            </div>
+            <div class="news-item">
+              <p>
+                The Feedback Loop website is now Live!
+              </p>
+              <p>
+                Be sure to also check out the <a href="https://feedback-loop.bandcamp.com">Bandcamp</a> and <a href="https://www.instagram.com/feedbacklxxp/">Instagram</a> page of Feedback Loop.
+              </p>
+              <div class="news-date">
+                2020-09-22
+              </div>
+            </div>
+          </div>
         </div>
-        <p>
-          The Feedback Loop website is now Live!
-        </p>
-        <p>
-          Be sure to also check out the <a href="https://feedback-loop.bandcamp.com">Bandcamp</a> and <a href="https://www.instagram.com/feedbacklxxp/">Instagram</a> page of Feedback Loop.
-        </p>
+        <div class="btn next"><img src="images/right-arrow.png" /></div>
       </div>
     </div>
   </div>
-  <div class="section" id="music">
 
+  <div class="section" id="music">
     <div class="section-header" id="music-section-header">
       <h1>Music</h1>
     </div>
@@ -62,7 +85,8 @@
             <p>Original album that is still in progress and will be finished someday (hopefully).</p>
           </div>
           <div class="bandcamp-frame">
-            <iframe style="border: 0; width: 100%; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=2862571510/size=large/bgcol=ffffff/linkcol=1E1E1E/artwork=none/transparent=true/" seamless><a href="https://feedback-loop.bandcamp.com/album/no-reflection-needed">No Reflection Needed by Feedback Loop</a></iframe>
+            <iframe style="border: 0; width: 100%; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=2862571510/size=large/bgcol=ffffff/linkcol=1E1E1E/artwork=none/transparent=true/" seamless><a
+                href="https://feedback-loop.bandcamp.com/album/no-reflection-needed">No Reflection Needed by Feedback Loop</a></iframe>
           </div>
         </div>
       </div>
@@ -77,7 +101,9 @@
             <p>A collection of random recordings while in the studio.</p>
           </div>
           <div class="bandcamp-frame">
-<iframe style="border: 0; width: 100%; height: 294px;" src="https://bandcamp.com/EmbeddedPlayer/album=747825677/size=large/bgcol=ffffff/linkcol=1E1E1E/artwork=none/transparent=true/" seamless><a href="https://feedback-loop.bandcamp.com/album/in-the-studio">In The Studio by Feedback Loop</a></iframe>          </div>
+            <iframe style="border: 0; width: 100%; height: 294px;" src="https://bandcamp.com/EmbeddedPlayer/album=747825677/size=large/bgcol=ffffff/linkcol=1E1E1E/artwork=none/transparent=true/" seamless><a
+                href="https://feedback-loop.bandcamp.com/album/in-the-studio">In The Studio by Feedback Loop</a></iframe>
+          </div>
         </div>
       </div>
 
@@ -135,5 +161,44 @@
     <p><small>&copy; 2020 Feedback Loop</small></p>
   </footer>
 
+  <script>
+   const newsSlider = document.querySelector('.news-slider');
+   const newsItems = newsSlider.querySelector('.news-items');
+   const nextBtn = newsSlider.querySelector('.btn.next');
+   const prevBtn = newsSlider.querySelector('.btn.prev');
+   const itemWidth = newsSlider.querySelector('.news-item').clientWidth + 30;
+
+   nextBtn.addEventListener('click', scrollToNextItem);
+   prevBtn.addEventListener('click', scrollToPrevItem);
+
+   newsItems.addEventListener("scroll", updateButtons);
+
+   prevBtn.style.opacity = "0.5";
+
+   function scrollToNextItem() {
+     newsItems.scrollBy({left: itemWidth, top: 0, behavior: 'smooth'});
+     updateButtons();
+   }
+   function scrollToPrevItem() {
+     newsItems.scrollBy({left: -itemWidth, top: 0, behavior: 'smooth'});
+     updateButtons();
+   }
+
+   function updateButtons() {
+     if(newsItems.scrollLeft == 0) {
+       prevBtn.style.opacity = "0.5";
+     } else {
+       prevBtn.style.opacity = "1.0";
+     }
+     if(newsItems.scrollLeft < (newsItems.scrollWidth - itemWidth)) {
+       nextBtn.style.opacity = "1.0";
+     } else {
+       nextBtn.style.opacity = "0.5";
+     }
+   }
+
+</script>
+
 </body>
+
 </html>
