@@ -49,6 +49,10 @@ h1 {
   text-align: center;
 }
 
+a:visited {
+  color: white;
+}
+
 .navigation-item > a {
   font-family: 'Permanent Marker';
   font-size: 26px;
@@ -247,7 +251,7 @@ img {
 }
 
 #merch-background {
-  background: url('images/merch-background.jpg') center center no-repeat;
+  background: url('images/merch.jpg') center center no-repeat;
   background-size: cover;
   height: 400px;
   display: flex;
@@ -255,21 +259,29 @@ img {
   align-items: center;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   border-radius: 6px;
   max-width: 960px;
 }
 
-.coming-soon {
-  color: white;
-  font-size: 15px;
-  width: auto;
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+.merch-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.merch-button > .button {
+  background-color: rgb(232, 208, 25);
+  border: none;
+  color: black;
+  padding: 15px 32px;
   text-align: center;
-  border-radius: 6px;
-  background-color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 26px;
 }
 
 hr {
@@ -400,11 +412,8 @@ footer > p {
     height: 500px;
   }
 
-  .coming-soon {
-    padding: 20px;
-    font-size: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
+  .merch-button > .button {
+    font-size: 18px;
   }
 
   .service-logo {
@@ -478,8 +487,10 @@ footer > p {
     height: 600px;
   }
 
-  .coming-soon {
-    font-size: 25px;
+  .merch-button > .button {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
 
   .service-logo {
