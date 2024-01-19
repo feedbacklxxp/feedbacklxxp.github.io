@@ -35,49 +35,21 @@
 
   <div class="section" id="latest-news">
     <div class="content">
-      <div class="news-slider">
-        <div class="btn prev"><img src="images/left-arrow.png" /></div>
         <div class="news-content">
           <div class="latest-news-header">
             LATEST NEWS
           </div>
-          <div class="news-items">
             <div class="news-item">
               <p>
-                The Feedback Loop shop is open!
+                Feedback Loop is now on Threads!
               </p>
               <p>
-                Click <a href="https://www.redbubble.com/people/feedbackloopart/shop">here</a> to view Feedback Loop shirts, sweaters and stickers.
+                Follow us <a href="https://www.threads.net/@feedbacklxxp">here</a> for updates.
               </p>
-              <div class="news-date">
-                2020-11-03
+              <div class="news-signature">
+              - Feedback Loop
               </div>
             </div>
-            <div class="news-item">
-              <p>
-                New song released!
-              </p>
-              <p>
-                Scroll down to listen to "Where Are You Now" or click <a href="https://feedback-loop.bandcamp.com/track/where-are-you-now">here</a> to listen to it on Bandcamp.
-              </p>
-              <div class="news-date">
-                2020-10-07
-              </div>
-            </div>
-            <div class="news-item">
-              <p>
-                The Feedback Loop website is now Live!
-              </p>
-              <p>
-                Be sure to also check out the <a href="https://feedback-loop.bandcamp.com">Bandcamp</a> and <a href="https://www.instagram.com/feedbacklxxp/">Instagram</a> page of Feedback Loop.
-              </p>
-              <div class="news-date">
-                2020-09-22
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="btn next"><img src="images/right-arrow.png" /></div>
       </div>
     </div>
   </div>
@@ -88,12 +60,13 @@
     </div>
 
     <div class="inner-section">
-      <div class="content">
+      <div class="content bordered">
         <div class="album">
           <div class="album-info">
             <img src="images/no-reflection-needed-cover.jpg" alt="No Reflection Needed album cover">
             <h2>No Reflection Needed</h2>
-            <p>Original album that is still in progress and will be finished someday (hopefully).</p>
+            <p>Original album about finding yourself</p>
+            <p>(Still work in progress)</p>
           </div>
           <div class="bandcamp-frame">
             <iframe style="border: 0; width: 100%; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=2862571510/size=large/bgcol=ffffff/linkcol=1E1E1E/artwork=none/transparent=true/" seamless><a
@@ -104,12 +77,12 @@
     </div>
 
     <div class="inner-section">
-      <div class="content">
+      <div class="content bordered">
         <div class="album">
           <div class="album-info">
             <img src="images/in-the-studio-cover.png" alt="In The Studio album cover">
             <h2>In The Studio</h2>
-            <p>A collection of random recordings while in the studio.</p>
+            <p>A collection of recordings while in the studio</p>
           </div>
           <div class="bandcamp-frame">
             <iframe style="border: 0; width: 100%; height: 294px;" src="https://bandcamp.com/EmbeddedPlayer/album=747825677/size=large/bgcol=ffffff/linkcol=1E1E1E/artwork=none/transparent=true/" seamless><a
@@ -122,7 +95,7 @@
   </div>
 
   <div class="section" id="merch">
-    <div class="section-header">
+    <div class="section-header" id="merch-section-header">
       <h1>Merch</h1>
     </div>
     <div id="merch-background">
@@ -155,10 +128,10 @@
           </a>
         </div>
         <div class="service-item">
-          <a href="https://twitter.com/feedbacklxxp">
+          <a href="https://www.threads.net/@feedbacklxxp">
             <div class="service-logo">
-              <img src="images/twitter-logo.png" class="inactive-logo" alt="Twitter logo">
-              <img src="images/twitter-logo-active.png" class="active-logo" alt="Twitter logo">
+              <img src="images/threads-logo.png" class="inactive-logo" alt="Threads logo">
+              <img src="images/threads-logo-active.png" class="active-logo" alt="Threads logo">
             </div>
           </a>
         </div>
@@ -169,46 +142,8 @@
 
   <footer>
     <img src="images/logo.png" height="50" alt="logo">
-    <p><small>&copy; 2020 Feedback Loop</small></p>
+    <p><small>&copy; 2024 Feedback Loop</small></p>
   </footer>
-
-  <script>
-   const newsSlider = document.querySelector('.news-slider');
-   const newsItems = newsSlider.querySelector('.news-items');
-   const nextBtn = newsSlider.querySelector('.btn.next');
-   const prevBtn = newsSlider.querySelector('.btn.prev');
-   const itemWidth = newsSlider.querySelector('.news-item').clientWidth + 30;
-
-   nextBtn.addEventListener('click', scrollToNextItem);
-   prevBtn.addEventListener('click', scrollToPrevItem);
-
-   newsItems.addEventListener("scroll", updateButtons);
-
-   prevBtn.style.opacity = "0.5";
-
-   function scrollToNextItem() {
-     newsItems.scrollBy({left: itemWidth, top: 0, behavior: 'smooth'});
-     updateButtons();
-   }
-   function scrollToPrevItem() {
-     newsItems.scrollBy({left: -itemWidth, top: 0, behavior: 'smooth'});
-     updateButtons();
-   }
-
-   function updateButtons() {
-     if(newsItems.scrollLeft == 0) {
-       prevBtn.style.opacity = "0.5";
-     } else {
-       prevBtn.style.opacity = "1.0";
-     }
-     if(newsItems.scrollLeft < (newsItems.scrollWidth - itemWidth)) {
-       nextBtn.style.opacity = "1.0";
-     } else {
-       nextBtn.style.opacity = "0.5";
-     }
-   }
-
-</script>
 
 </body>
 

@@ -89,28 +89,51 @@ img {
 
 #music {
   background-color: white;
+  background-image: url(images/background_music.png);
+  background-repeat: repeat;
 }
 
 #music-section-header h1 {
   color: black;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: white;
+  border-radius: 25px;
 }
 
 #merch {
   background-color: rgb(25, 25, 25);
+  background-image: url(images/background_merch.png);
+  background-repeat: repeat;
+}
+
+#merch-section-header h1 {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgb(25, 25, 25);
+  border-radius: 25px;
 }
 
 #connect-section-header h1 {
   color: black;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgb(232, 208, 25);
+  border-radius: 25px;
 }
 
 
 #connect {
   background-color: rgb(232, 208, 25);
+  background-image: url(images/background_connect.png);
+  background-repeat: repeat;
+  padding-bottom: 40px;
 }
 
 .section-header {
   display: flex;
   justify-content: center;
+  padding: 20px;
 }
 
 .content {
@@ -126,7 +149,8 @@ img {
   padding-bottom: 20px;
   background-color: rgb(30,30,30);
   display: flex;
-  justify-content: center;
+  background-image: url(images/background_news.png);
+  background-repeat: repeat;
 }
 
 .news-content {
@@ -135,64 +159,13 @@ img {
   max-width: 500px;
 }
 
-.news-slider {
-  display: flex;
-  align-items: center;
-}
-
-.news-slider .btn {
-  min-height: 30px;
-  min-width: 30px;
-  height: 30px;
-  width: 30px;
-  border-radius: 15px;
-  background-color: rgba(95, 106, 117, 0.3);
-}
-
-.news-slider .btn > img {
-  height: 30px;
-  width: 30px;
-}
-
-.news-slider .btn:hover{
-  background-color: rgba(95, 106, 117, 0.5);
-  cursor: pointer;
-}
-.news-slider .btn.next {
-  margin-left: 15px;
-}
-.news-slider .btn.prev {
-  margin-right: 15px;
-}
-
-.news-items {
-  width: 100%;
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.news-items::-webkit-scrollbar {
-  display: none;
-}
-
-.news-item {
-  width: 100%;
-  scroll-snap-align: start;
-  flex-shrink: 0;
-  margin-right: 30px;
-}
-
 .news-item > p {
   margin: 0;
   margin-bottom: 6px;
   text-align: justify;
 }
 
-.news-date {
+.news-signature {
   margin-top: 12px;
   font-size: 10px;
   color: rgb(200, 200, 200);
@@ -251,7 +224,7 @@ img {
 }
 
 #merch-background {
-  background: url('images/merch.jpg') center center no-repeat;
+  background: url('images/merch.png') center center no-repeat;
   background-size: cover;
   height: 400px;
   display: flex;
@@ -268,6 +241,7 @@ img {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  padding: 10px;
 }
 
 .merch-button > .button {
@@ -303,6 +277,12 @@ hr {
   flex-direction: column;
   justify-content: center;
   align-items :center;
+  transition: all .2s ease-in-out; 
+}
+
+.service-logo:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px white;
 }
 
 .service-logo > .active-logo {
@@ -340,6 +320,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url(images/background_footer.png);
+  background-repeat: repeat;
 }
 
 footer > p {
@@ -424,6 +406,14 @@ footer > p {
   .content {
     padding-left: 40px;
     padding-right: 40px;
+    margin: auto;
+  }
+
+  .bordered {
+    border: hsl(0, 5%, 85%);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 14px;
   }
 
   .album {
@@ -487,7 +477,13 @@ footer > p {
     height: 600px;
   }
 
+  .merch-button > .button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px white;
+  }
+
   .merch-button > .button {
+    transition: all .2s ease-in-out; 
     font-size: 22px;
     margin-top: 20px;
     margin-bottom: 40px;
