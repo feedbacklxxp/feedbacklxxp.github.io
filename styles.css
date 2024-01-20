@@ -89,7 +89,7 @@ img {
 
 #music {
   background-color: white;
-  background-image: url(images/background_music.png);
+  background-image: url(images/background_music_small.png);
   background-repeat: repeat;
 }
 
@@ -103,7 +103,7 @@ img {
 
 #merch {
   background-color: rgb(25, 25, 25);
-  background-image: url(images/background_merch.png);
+  background-image: url(images/background_merch_small.png);
   background-repeat: repeat;
 }
 
@@ -125,7 +125,7 @@ img {
 
 #connect {
   background-color: rgb(232, 208, 25);
-  background-image: url(images/background_connect.png);
+  background-image: url(images/background_connect_small.png);
   background-repeat: repeat;
   padding-bottom: 40px;
 }
@@ -235,6 +235,7 @@ img {
   margin-bottom: 20px;
   border-radius: 6px;
   max-width: 960px;
+  cursor: pointer;
 }
 
 .merch-button {
@@ -492,5 +493,17 @@ footer > p {
   .service-logo {
     width: 120px;
     height: 120px;
+  }
+
+  #music {
+    background-image: url(images/background_music.png);
+  }
+
+  #connect {
+    background-image: url(images/background_connect.png);
+  }
+
+  #merch {
+    background-image: url(images/background_merch.png);
   }
 }
